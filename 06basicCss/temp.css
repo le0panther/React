@@ -1,0 +1,50 @@
+body{
+    background-color:rgb(204, 201, 204);
+    color: black;
+}
+
+.main_cointainer{
+    color:black;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 50%;
+    background-color: rgb(190, 212, 230);
+    margin: auto; 
+}
+
+h1{
+    text-align: center;
+    background-color: bisque;
+   
+    margin: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    
+    
+}
+
+.list_parent{
+    list-style: none;
+    margin: auto;
+    padding-left:0px;
+     background-color: blue;
+    
+}
+
+.list_child{
+    border-top: 2px solid black;
+    padding: 20px;
+    text-align: center;
+   
+    
+
+}
+
+.list_child:hover{
+    background-color: rgb(188, 217, 233);
+    border-radius:10px ;
+}
+
+
+

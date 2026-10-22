@@ -1,0 +1,83 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    text-align: center;
+    margin: 1rem;
+   
+    
+}
+
+.outer_container{
+     border: 2px solid black;
+     margin: 0 auto 1rem;
+     max-width: 550px;
+     border-radius: 1rem;  
+       
+    
+}
+
+h1{
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-top-left-radius: 1rem;
+    border-top-right-radius:1rem;
+    background-color: peachpuff;
+    padding: 1rem;
+}
+
+.menu_cont{
+    font-size: 2rem;
+    line-height: 7rem;
+    max-width: 100%;
+}
+
+.ideal_cont{
+    border:1px solid black;
+    list-style: none;
+    width: 100%;
+
+}
+
+.ideal_cont:hover,.ideal_cont:focus{
+    background-color: black;
+    cursor: pointer;
+    color: white;
+    text-shadow: 10px 15px 20px white;
+}
+
+.ideal_cont:last-child{
+    border-bottom-left-radius:1rem;
+    border-bottom-right-radius:1rem;
+} 
+
+a{
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+a:hover{
+    color: white;
+}
+
+#footer{
+    color: black;
+    text-decoration: underline;
+    
+}
+
+#footer:hover{
+    color: blue;
+}
+
+/* <!-- isme ek addition karna , essa ki aap iske menu's ko naavigate
+  kar pao with key's of the key board --> */
+
+
+
+

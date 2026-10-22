@@ -1,0 +1,18 @@
+*{
+    margin:0;
+    padding: 1rem;
+    height: 100%;
+}
+
+p{
+    margin: 1rem;
+    padding: 1rem;
+    background-color: blue;
+    display: inline;
+}
+
+span{
+    color:red;
+    background-color: black;
+    display: inline;
+}

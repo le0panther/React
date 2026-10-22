@@ -1,24 +1,21 @@
-function customRender(element,Container){
-    const dom=document.createElement(element.type)
-    dom.innerHTML=element.value
-    for (const key in element.props) {
-        dom.setAttribute(key,element.props[key])
+function customRenderer(element, Container){
+    const child=document.createElement(element.type)
+    child.innerHTML=element.value
+    for(const key in element.props){
+        child.setAttribute(key,element.props[key])
     }
-    Container.appendChild(dom)
-
+    Container.appendChild(child)
 }
 
-const reactElement =document.querySelector("#root")
+const mainContainer= document.querySelector("#root")
 
-const mainContainer ={
-    type:"a",
+const rootElement={
+    type:"h1",
     props:{
-        id:"link",
-        class:"link",
-        href:"youtube.com"
-    },
-    value:"youtube"
+        id:"h1",
+        class:"h1"},
+    value:"customReact"
 }
 
-customRender(mainContainer,reactElement)
+customRenderer(rootElement,mainContainer)
 

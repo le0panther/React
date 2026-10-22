@@ -42,3 +42,5 @@ createRoot(document.getElementById('root')).render(
 
 //evaluated expresion kya hota hai  ,padh lena 
 //{}
+
+//just the final output                         
