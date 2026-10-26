@@ -2,36 +2,44 @@ import { useState,useCallback,useEffect } from 'react'
 import './App.css'
 
 function App() {
-  let [length, setlength] = useState(8)
-  let[numbers,setNumbers]=useState(false)
-  let[characters,setCharacters]=useState(false)
+  let [length,setLength]=useState(12)
+  let [number,setNumber]=useState(false)
+  let [char,setChar]=useState(false)
   let[password,setPassword]=useState("")
 
-  
+  const passwordGenerator=useCallback(()=>{
 
- const passwordGenerator=useCallback(
-  ()=>{
-    let str="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+    let str="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqqrstuvwxyz"
+    if(number==true){
+      str+="1230456789"
+    }
+    if(char==true){
+      str+="<>:?{}_+-=[];'.,/</>"
+    }
+
     let pass=""
-    if(numbers==true){
-      str+="0123456789"
-    }
-    if(characters==true){
-      str+=",.<>?;:{[}]-_=+"
-    }
+    for( let i=0;i<length;i++){
+     let num= Math.floor(Math.random() * (str.length + 1))
+     pass+=str.charAt(num)
 
-    for( let i=0 ;i<length;i++){
-      const size= Math.floor(Math.random() * (str.length ));
-      pass+=str.charAt(size)
     }
 
     setPassword(pass)
- },[numbers,characters,length])
+
+  }
+    
+    
+    ,[length,number,char])
+ 
+
+    useEffect(()=>{
+      passwordGenerator()
+    },[passwordGenerator])
+
+  
 
 
- useEffect(() => {
-    passwordGenerator()
-  }, [passwordGenerator])
+
 
   return (
   <>
@@ -51,7 +59,7 @@ function App() {
           />
         </div>
 
-        {/* Volume slider */}
+        {/* length slider */}
         <div className="flex flex-col gap-2">
           <label htmlFor="volume" className="font-medium">Length:{length}</label>
           <input
@@ -62,7 +70,10 @@ function App() {
             max="100"
             defaultValue={length}
             className="w-full"
-            onChange={(e)=>{ setlength(e.target.value)}}
+            onChange={(e)=>{
+              setLength(e.target.value)
+
+            }}
           />
         </div>
 
@@ -70,11 +81,17 @@ function App() {
         <div className="flex gap-6">
           <div className="flex items-center gap-2">
             <input type="checkbox" id="option1" 
-            onChange={() => setNumbers((prev) => !prev)}name="option1" />
+            name="option1" onChange={
+              (e)=>{
+              setNumber(e.target.checked)
+
+            }} />
             <label htmlFor="option1">Numbers</label>
           </div>
           <div className="flex items-center gap-2">
-            <input type="checkbox" id="option2"onChange={() => setCharacters((prev) => !prev)} name="option2" />
+            <input type="checkbox" id="option2" name="option2" onChange={(e)=>{
+              setChar(e.target.checked)
+            }} />
             <label htmlFor="option2">Characters</label>
           </div>
         </div>
