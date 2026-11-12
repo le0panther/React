@@ -1,16 +1,14 @@
-import React from "react";
-import Header from "./components/header/Header";
-import Footer from "./components/footer/footer";
 import { Outlet } from "react-router-dom";
+import Header from "./components/header/header";
+import Footer from "./components/footer/footer";
 
-function Layout(){
-    return(
-        <>
-        <Header/>
-        <Outlet/>
-        <Footer/>
-        </>
-    )
+function Layout() {
+  return (
+    <>
+      <Header />
+      <Outlet />
+      <Footer />
+    </>
+  );
 }
-
 export default Layout;
